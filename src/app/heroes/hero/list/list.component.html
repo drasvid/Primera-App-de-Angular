@@ -1,0 +1,32 @@
+<h3>Lista de Heroes</h3>
+
+
+
+<ul class="mt-2 list-group">
+
+    <!-- El for se basa en crear esa varaible que en otros leguajes por defecto es i, y que en este caso es heroe y lo itera de una lista [x] en este caso listaHeroes -->
+
+    <li *ngFor="let heroe of listaHeroes"  
+    
+        class="list-group-item">{{heroe}}</li>
+
+
+</ul>
+
+
+
+<div  *ngIf="heroBorrado; else nadaseElimino">
+
+    <h4>Heroe Borrado <small class="text-danger">{{heroBorrado}}</small> </h4>
+    
+</div>
+
+<!-- referencia local -->
+<ng-template #nadaseElimino>  
+
+    <h4>Nada ha sido elimindo aun</h4>
+
+</ng-template>
+
+
+<button (click)="removeLastHero()"  *ngIf="listaHeroes.length!==0" class="btn btn-outline-danger" type="button">Borrar heroe</button>
