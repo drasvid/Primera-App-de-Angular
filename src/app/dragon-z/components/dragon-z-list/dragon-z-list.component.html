@@ -1,0 +1,41 @@
+
+<h4>Lista de Personajes</h4>
+
+
+<ul class="list-group">
+
+    <!-- La propiedad index es basicamente la i en un ciclo for, que en este caso es la veces que se repite. -->
+
+    <li *ngFor="
+
+        let character of characterList; 
+        let i=index;
+        let isfirst=first;
+        let isLast=last;
+        let isEven=even;
+        let isOdd=odd;
+         "
+
+        
+
+        class="list-group-item d-flex justify-content-between"
+
+        [ngClass]="{'list-group-item-success':isfirst,
+                    'list-group-item-primary':isLast}"> 
+
+
+        
+        <!-- La api ngclass, ayuda a que si un elemento, en este caso un li o un div, cumple una condicion, le aplicara una propiedad -->
+        
+        <div>
+
+            <span>{{i+1}}.</span> {{character.name}}-{{character.power}}
+
+        </div>
+
+        <button class="btn btn-danger" (click)="deleteCharacterById(character.id)">X</button>
+
+
+    </li>
+
+</ul>

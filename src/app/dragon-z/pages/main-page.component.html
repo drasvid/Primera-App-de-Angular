@@ -1,0 +1,32 @@
+
+<div class="row">
+
+    <div class="col">
+
+        <dragon-z-list [characterList]="Characters"
+
+                        (deleteId)="deleteCharacter($event)"
+            
+        >
+    
+        </dragon-z-list>
+
+    </div>
+
+    <div class="col">
+
+        <dragon-add-character (onNewCharacter)="NewCharacter($event)" >
+        
+    
+    </dragon-add-character>
+
+
+
+    </div>
+
+
+
+</div>
+
+
+
