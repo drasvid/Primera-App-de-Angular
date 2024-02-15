@@ -46,7 +46,6 @@ export class DragonService {
         this.Characters.push(character)
     
     
-        console.log( this.Characters.indexOf(character) );
       }
     
     
